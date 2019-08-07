@@ -20,6 +20,8 @@ program
   .option('-i, --intercept', 'intercept(decrypt) https requests when root CA exists')
   .option('-s, --silent', 'do not print anything into terminal')
   .option('-c, --clear', 'clear all the certificates and temp files')
+  .option('--secure', 'use https proxy')
+  .option('-h, --hostname [value]', 'hostname of the proxy (required for https proxy)')
   .option('--ws-intercept', 'intercept websocket')
   .option('--ignore-unauthorized-ssl', 'ignore all ssl error')
   .parse(process.argv);

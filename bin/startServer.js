@@ -25,7 +25,8 @@ module.exports = function startServer(program) {
     //start proxy
     .then(ruleModule => {
       proxyServer = new AnyProxy.ProxyServer({
-        type: 'http',
+        hostname: program.hostname,
+        type: program.secure ? 'https' : 'http',
         port: program.port || 8001,
         throttle: program.throttle,
         rule: ruleModule,
